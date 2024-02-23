@@ -1,5 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Foto from "../components/Foto.astro";
+import Intro from "../components/Intro.astro";
+import Bento from "../components/Bento.astro";
+import PreFooter from "../components/PreFooter.astro";
+import Footer from "../components/Footer.astro";
+
 ---
 
-<Layout title="Minis FHA">Hola</Layout>
+<Layout title="Minis FHA">
+  <Foto />
+
+  <main class="h-[2000px]">
+    <Intro />
+    <Bento />
+    <PreFooter />
+  </main>
+
+  <Footer />
+</Layout>
