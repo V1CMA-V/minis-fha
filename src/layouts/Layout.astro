@@ -26,8 +26,21 @@ const { title } = Astro.props;
 <style is:global>
   html {
     font-family: system-ui, sans-serif;
-    background: #fafafa;
-    background-size: 224px;
+    background: #f2f2f2;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.9);
+    line-height: 1.4;
+    margin-bottom: 1em;
+    font-weight: 100;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+  }
+
+  p strong {
+    color: green;
+    font-weight: 700;
   }
 
   #header-nav {
