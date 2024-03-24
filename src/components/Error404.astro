@@ -1,0 +1,42 @@
+---
+import Error404Layout from '@/layouts/Error404Layout.astro'
+import styles from '@/components/Button.module.css'
+---
+
+<Error404Layout
+  title=`Pagina no encontrada - MinisFHA`
+  description="Pagina no encontrada - MinisFHA"
+>
+  <section class="flex relative pb-24 min-h-screen">
+    <div
+      class="mx-auto flex flex-col pt-20 relative justify-center items-center"
+    >
+      <div class="absolute">
+        <h1 class="text-4xl font-bold text-white text-center pr-2 mt-1">404</h1>
+        <p class="text-white text-[10px] md:text-xs text-center uppercase mt-2">
+          Pagina no encontrada
+        </p>
+      </div>
+      <a
+        href={'/'}
+        class={`
+                    text__glowing
+                    text-sm 
+                    ${styles.button} 
+                    w-fit
+                    font-medium
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    mt-36`}
+      >
+        Volver a la pagina de inicio
+      </a>
+    </div>
+  </section>
+</Error404Layout>
