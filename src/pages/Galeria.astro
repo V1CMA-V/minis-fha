@@ -1,4 +1,6 @@
 ---
+import HeroContainer from '@/components/HeroContainer.astro'
+import Numeros from '@/components/Numeros.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
 
@@ -6,9 +8,16 @@ import Layout from '@/layouts/Layout.astro'
   title="Galeria"
   description="Pagina con coleccion de imagenes sobre Minis FHA"
 >
-  <section
-    class="relative h-dvh w-full max-w-[100vw] md:aspect-video md:h-[80vh] xl:h-full"
-  >
-    <h1>Galeria</h1>
-  </section>
+  <HeroContainer img="/galeria.webp">
+    <h1
+      class="lg:text-6xl text-5xl text-center uppercase font-tomaso tracking tracking-widest"
+    >
+      Galeria de Imagenes
+    </h1>
+  </HeroContainer>
+
+  <main>
+    <Numeros />
+    <div class="h-96"></div>
+  </main>
 </Layout>

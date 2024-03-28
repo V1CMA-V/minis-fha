@@ -1,0 +1,25 @@
+---
+interface Props {
+  img: string
+}
+
+const { img } = Astro.props
+---
+
+<div class="bg-no-repeat bg-cover relative h-[90vh] w-full max-w-[100vw]">
+  <div
+    class="absolute inset-0 m-auto w-full h-full flex justify-center flex-col items-center animate-blurred-fade-in"
+  >
+    <slot />
+  </div>
+  <img
+    class="absolute cp-v h-full w-full object-cover object-center animate-duration-1000 animate-slide-in-top -z-10"
+    src={img}
+    alt="Minis FHA cover"
+  />
+  <img
+    class="absolute -bottom-48 object-cover object-center animate-duration-1000 animate-ease-in-out blur-3xl -z-40"
+    src={img}
+    alt="Minis FHA cover"
+  />
+</div>

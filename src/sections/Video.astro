@@ -29,20 +29,57 @@
     </section>
   </div>
   <video
-    class="video cp-v h-screen w-full object-cover object-top animate-duration-[2s] animate-ease-in-out"
-    src="/video-intro-minisfha.mp4"
     autoplay
     loop
     muted
-    style="clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 50% 100%, 0 85%);"
-  ></video>
+    playsinline
+    id="main-video"
+    preload="metadata"
+    class="video hidden cp-v h-full w-full object-cover object-top animate-duration-[2s] animate-ease-in-out"
+  >
+    <source src="/video-intro-minisfha.mp4" type="video/mp4" />
+  </video>
   <video
-    class="video absolute w-full blur-3xl -bottom-40 -z-40 animate-duration-[2s] animate-ease-in-out"
-    src="/video-intro-minisfha.mp4"
+    class="video hidden absolute -bottom-48 -z-40 blur-3xl animate-duration-[2s] animate-ease-in-out"
     autoplay
     loop
     muted
     preload="metadata"
   >
+    <source src="/video-intro-minisfha.mp4" type="video/mp4" />
   </video>
 </div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const firstVideo = document.querySelector('#main-video') as HTMLMediaElement
+
+    if (firstVideo) {
+      const videos = document.querySelectorAll(
+        '.video'
+      ) as NodeListOf<HTMLMediaElement>
+
+      if (firstVideo.readyState >= 3) {
+        videos.forEach((videoEl) => {
+          videoEl.classList.remove('hidden')
+          videoEl.classList.add('animate-fade')
+        })
+
+        return
+      }
+
+      firstVideo.addEventListener('loadeddata', () => {
+        videos.forEach((videoEl) => {
+          videoEl.classList.remove('hidden')
+          videoEl.classList.add('animate-fade')
+        })
+      })
+    }
+  })
+</script>
+
+<style>
+  .subtitle {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+</style>
