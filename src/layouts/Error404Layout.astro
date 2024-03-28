@@ -1,5 +1,5 @@
 ---
-// import { ViewTransitions } from 'astro:transitions'
+import { ViewTransitions } from 'astro:transitions'
 
 interface Props {
   description: string
@@ -21,7 +21,7 @@ const { currentLocale } = Astro
     <title>{title}</title>
 
     <slot name="preload" />
-    <!-- <ViewTransitions /> -->
+    <ViewTransitions />
   </head>
 
   <body>
