@@ -1,15 +1,8 @@
 import 'photoswipe/style.css';
 
 import Button from '@/components/Button.tsx';
-import { useGallery } from "../hooks/useGallery"
+import { useGallery } from "@/hooks/useGallery"
 import '@/components/styles/Galeria.css';
-
-import { type Masory } from "@/types/gallery"
-
-interface Photo {
-  height: number;
-  width: number;
-}
 
 export default function Galeria() {
   
@@ -31,7 +24,7 @@ export default function Galeria() {
         id="gallery"
       >
         {
-          photos.map(({ height, width }:Photo, i:number) => (
+          photos.map(({ height, width }, i) => (
             <a
               class="group rounded-xl hover:scale-105 hover:contrast-[110%] transition-all relative"
               href={`/archivo-page/img-${i + 1}.webp`}
