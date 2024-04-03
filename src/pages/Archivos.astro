@@ -2,22 +2,32 @@
 import HeroContainer from '@/components/HeroContainer.astro'
 import Numeros from '@/components/Numeros.astro'
 import Layout from '@/layouts/Layout.astro'
+
+import Button from '@/components/Button.tsx'
+import Galeria from '@/components/Galeria'
 ---
 
 <Layout
   title="Galeria"
   description="Pagina con coleccion de imagenes sobre Minis FHA"
 >
-  <HeroContainer img="/galeria.webp">
+  <HeroContainer img="/galeria-background.webp">
     <h1
       class="lg:text-6xl text-5xl text-center uppercase font-tomaso tracking tracking-widest"
     >
-      Galeria de Imagenes
+      Momentos en Minis FHA
     </h1>
+
+    <Button
+      className="animate-fade-up uppercase"
+      url="https://www.youtube.com/watch?v=1YmpPrqKP-g"
+    >
+      Ver video
+    </Button>
   </HeroContainer>
 
-  <main>
+  <main class="pb-24">
+    <Galeria client:load />
     <Numeros />
-    <div class="h-96"></div>
   </main>
 </Layout>
