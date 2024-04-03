@@ -1,7 +1,7 @@
 import 'photoswipe/style.css';
 
 import Button from '@/components/Button.tsx';
-import { useGallery } from "@/hooks/useGallery"
+import { useGallery } from "@/components/hooks/useGallery"
 import '@/components/styles/Galeria.css';
 
 export default function Galeria() {
