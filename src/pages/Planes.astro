@@ -1,11 +1,204 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+
+import HeroContainer from '@/components/HeroContainer.astro'
+import Adopcion from '@/components/Adopcion.astro'
 ---
 
 <Layout
-  title="Planes"
-  description="A collection of planes from around the world."
+  title="Sobre nosotros"
+  description="Pagina para saber nuestra trayectoria en adiestramiento canino"
 >
-  <h1>Planes</h1>
-  <p>Here are some planes from around the world.</p>
+  <HeroContainer img="/planes-background.webp">
+    <h1
+      class="lg:text-6xl text-5xl text-center uppercase tracking tracking-widest"
+    >
+      Nuestros Planes
+    </h1>
+  </HeroContainer>
+
+  <main class="pb-24">
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-center text-pretty px-6 text-xl sm:px-20 flex flex-col md:flex-row items-center justify-center p-6 md:p-8"
+    >
+      <div id="theater-text" class="space-y-4">
+        <p class="text-balance text-3xl">
+          En Minis FHA, ofrecemos una variedad de planes de adiestramiento
+          <strong>canino diseñados para satisfacer</strong> las necesidades específicas
+          de cada perro y su propietario. Desde la obediencia básica hasta programas
+          avanzados, <strong>nuestros entrenadores expertos</strong> te ayudarán
+          a encontrar la solución perfecta.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="trophies" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={556}
+          src="/ad-basico.webp"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={812}
+        />
+      </div>
+      <div id="trophies-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          Plan Básico de Adiestramiento
+        </h1>
+        <p class="text-pretty md:text-2xl">
+          <strong>Objetivo:</strong> Enseñar comandos básicos y mejorar la conducta
+          general.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Duración:</strong> 10 sesiones de 1 hora cada una.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Incluye:</strong> Comandos básicos (sentarse, quedarse, venir),
+          corrección de malos hábitos, sesiones en diferentes ambientes.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Precio:</strong> $5000 mxn.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="theater-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          Plan Avanzado de Adiestramiento
+        </h1>
+        <p class="text-pretty md:text-2xl">
+          <strong>Objetivo:</strong> Adiestramiento de nivel avanzado, incluyendo
+          comportamientos específicos y corrección de conductas complejas.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Duración:</strong> 15 sesiones de 1 hora.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Incluye:</strong> Comandos avanzados, trabajo con distracciones,
+          entrenamiento especializado según las necesidades del perro.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Precio:</strong> $8000 mxn.
+        </p>
+      </div>
+      <div id="theater" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={500}
+          src="/ad-avanzado.webp"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={500}
+        />
+      </div>
+    </section>
+
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="trophies" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={556}
+          src="/ad-personalizado.webp"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={812}
+        />
+      </div>
+      <div id="trophies-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          Plan de Adiestramiento Personalizado
+        </h1>
+        <p class="text-pretty md:text-2xl">
+          <strong>Objetivo:</strong> Programa personalizado basado en una evaluación
+          detallada de las necesidades del perro y del propietario.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Duración:</strong> Variable según el plan diseñado.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Incluye:</strong> Consulta inicial, plan de adiestramiento personalizado,
+          seguimiento y ajustes.
+        </p>
+        <p class="text-pretty md:text-2xl">
+          <strong>Precio:</strong> Según evaluación.
+        </p>
+      </div>
+    </section>
+
+    <Adopcion />
+  </main>
 </Layout>
+
+<style>
+  #theater,
+  #trophies-text h1,
+  #trophies-text p {
+    animation: cover-animation linear both;
+    animation-timeline: view();
+  }
+  #theater-text h1,
+  #theater-text p,
+  #trophies {
+    animation: entry-animation linear both;
+    animation-timeline: view();
+  }
+  #theater {
+    animation-range: entry 10% cover 40%;
+  }
+  #theater-text h1 {
+    animation-range: entry 10% cover 30%;
+  }
+  #theater-text p {
+    animation-range: entry 10% cover 20%;
+  }
+  #trophies {
+    animation-range: entry 30% cover 50%;
+  }
+  #trophies-text h1 {
+    animation-range: entry 30% cover 40%;
+  }
+  #trophies-text p {
+    animation-range: entry 20% cover 30%;
+  }
+  @keyframes entry-animation {
+    0% {
+      opacity: 0;
+      translate: var(--entry-animation) 0;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @keyframes cover-animation {
+    0% {
+      opacity: 0;
+      translate: var(--cover-animation) 0;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+</style>
