@@ -15,7 +15,7 @@ export default function Galeria() {
       >
         Galeria
       </h2>
-      <p class="text-center text-2xl">Nuestros momentos</p>
+      <p class="text-center text-2xl">Algunos de nuestros mejores momentos en Minis FHA</p>
 
       <masonry-layout
         gap="24"
