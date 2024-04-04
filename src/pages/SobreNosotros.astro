@@ -1,14 +1,171 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+
+import HeroContainer from '@/components/HeroContainer.astro'
 ---
 
 <Layout
   title="Sobre nosotros"
   description="Pagina para saber nuestra trayectoria en adiestramiento canino"
 >
-  <h1>Sobre nosotros</h1>
-  <p>
-    ¡Hola! Somos un grupo de personas que nos encanta la tecnología y queremos
-    compartir nuestro conocimiento contigo.
-  </p>
+  <HeroContainer img="/archivo-page/img-20.webp">
+    <h1
+      class="lg:text-6xl text-5xl text-center uppercase tracking tracking-widest"
+    >
+      Sobre nosotros
+    </h1>
+  </HeroContainer>
+
+  <main class="pb-24">
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="theater-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          Quienes somos y que hacemos
+        </h1>
+        <p class="text-balance text-2xl">
+          Desde 1999, en Minis FHA hemos estado comprometidos con la excelencia
+          en el adiestramiento canino.
+        </p>
+        <p class="text-balance text-2xl">
+          Fundada por Francisco Alvarez, un apasionado adiestrador con más de 20
+          años de experiencia, nuestra misión ha sido siempre mejorar la
+          relación entre los perros y sus dueños, ofreciendo soluciones
+          prácticas y efectivas para el entrenamiento y la educación canina.
+        </p>
+      </div>
+      <div id="theater" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={500}
+          src="/theater.webp"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={500}
+        />
+      </div>
+    </section>
+
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="trophies" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={556}
+          src="/sobreNosotros-background.webp"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={812}
+        />
+      </div>
+      <div id="trophies-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          Nuestro Equipo
+        </h1>
+        <p class="text-balance md:text-2xl">
+          Contamos con un equipo de profesionales experimentados y apasionados,
+          <strong
+            >todos certificados en técnicas de adiestramiento modernas</strong
+          >. Nuestros entrenadores están dedicados a <strong
+            >proporcionar una educación canina de la más alta calidad,
+            personalizada según las necesidades de cada cliente y su mascota</strong
+          >.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="theater-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          Nuestro Compromiso
+        </h1>
+        <p class="text-balance text-2xl">
+          En Minis FHA, estamos comprometidos con la mejora continua y la
+          innovación en el campo del adiestramiento canino. Participamos
+          activamente en la comunidad, ofreciendo talleres educativos, apoyando
+          a refugios de animales y trabajando en colaboración con organizaciones
+          de bienestar animal para promover prácticas de cuidado responsable.
+        </p>
+      </div>
+      <div id="theater" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={500}
+          src="/theater-2.webp"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={500}
+        />
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  #theater,
+  #trophies-text h1,
+  #trophies-text p {
+    animation: cover-animation linear both;
+    animation-timeline: view();
+  }
+  #theater-text h1,
+  #theater-text p,
+  #trophies {
+    animation: entry-animation linear both;
+    animation-timeline: view();
+  }
+  #theater {
+    animation-range: entry 10% cover 40%;
+  }
+  #theater-text h1 {
+    animation-range: entry 10% cover 30%;
+  }
+  #theater-text p {
+    animation-range: entry 10% cover 20%;
+  }
+  #trophies {
+    animation-range: entry 30% cover 50%;
+  }
+  #trophies-text h1 {
+    animation-range: entry 30% cover 40%;
+  }
+  #trophies-text p {
+    animation-range: entry 20% cover 30%;
+  }
+  @keyframes entry-animation {
+    0% {
+      opacity: 0;
+      translate: var(--entry-animation) 0;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @keyframes cover-animation {
+    0% {
+      opacity: 0;
+      translate: var(--cover-animation) 0;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+</style>
