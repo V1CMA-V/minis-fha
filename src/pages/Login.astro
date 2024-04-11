@@ -1,0 +1,43 @@
+---
+import Button from '@/components/Button'
+import HeroContainer from '@/components/HeroContainer.astro'
+import Layout from '@/layouts/Layout.astro'
+
+import { getSession } from 'auth-astro/server'
+const session = await getSession(Astro.request)
+---
+
+<Layout
+  title="Iniciar sesion"
+  description="Pagina donde puedes inciar sesion con tu cuenta de GOOGLE"
+>
+  <HeroContainer img="/galeria-background.webp">
+    <h1
+      class="lg:text-6xl text-5xl text-center uppercase font-tomaso tracking tracking-widest"
+    >
+      Incia Sesion en Minis FHA
+    </h1>
+
+    {
+      session ? (
+        <>
+          <p class="text-pretty text-3xl font-medium">Hola {session.user?.name}</p>
+          <button id="logout">Cerrar sesion</button>
+        </>
+      ) : (
+        <button id="login">Inciar sesion</button>
+      )
+    }
+  </HeroContainer></Layout
+>
+
+<script>
+  import { $ } from '@/lib/dom-selector'
+  const { signIn, signOut } = await import('auth-astro/client')
+
+  const $login = $('#login')
+  const $logout = $('#logout')
+
+  if ($login) $login.onclick = () => signIn('google')
+  if ($logout) $logout.onclick = () => signOut()
+</script>
