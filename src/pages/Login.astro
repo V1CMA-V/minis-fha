@@ -2,6 +2,10 @@
 import HeroContainer from '@/components/HeroContainer.astro'
 import Layout from '@/layouts/Layout.astro'
 
+import styles from '../components/styles/Button.module.css'
+
+import Logeado from '@/sections/Logeado.astro'
+
 import { getSession } from 'auth-astro/server'
 const session = await getSession(Astro.request)
 ---
@@ -11,26 +15,66 @@ const session = await getSession(Astro.request)
   description="Pagina donde puedes inciar sesion con tu cuenta de GOOGLE"
 >
   <HeroContainer img="/galeria-background.webp">
-    <h1
-      class="lg:text-6xl text-5xl text-center uppercase font-tomaso tracking tracking-widest"
-    >
-      Incia Sesion en Minis FHA
-    </h1>
-
     {
       session ? (
         <>
-          <p class="text-pretty text-3xl font-medium">
-            Hola {session.user?.name}
-          </p>
-          <button id="logout">Cerrar sesion</button>
+          <h1 class="lg:text-6xl text-5xl text-center uppercase font-tomaso tracking tracking-widest mb-5">
+            Hola {session.user?.name} 👋
+          </h1>
+          <button
+            id="logout"
+            class={`
+                    text__glowing
+                    text-sm 
+                    ${styles.button} 
+                    w-fit
+                    font-medium
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    `}
+          >
+            Cerrar sesion
+          </button>
         </>
       ) : (
-        <button id="login">Inciar sesion</button>
+        <>
+          <h1 class="lg:text-6xl text-5xl text-center uppercase font-tomaso tracking tracking-widest mb-5">
+            Incia Sesion en Minis FHA
+          </h1>
+          <button
+            id="login"
+            class={`
+                    text__glowing
+                    text-sm 
+                    ${styles.button} 
+                    w-fit
+                    font-medium
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    `}
+          >
+            Inciar sesion
+          </button>
+        </>
       )
     }
-  </HeroContainer></Layout
->
+  </HeroContainer>
+  <main class="mb-24">
+    <Logeado />
+  </main>
+</Layout>
 
 <script>
   import { $ } from '@/lib/dom-selector'

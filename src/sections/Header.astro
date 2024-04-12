@@ -5,6 +5,9 @@ import styles from '../components/styles/Button.module.css'
 
 import MenuIcon from '@/components/Icons/MenuIcon.astro'
 import CloseIcon from '@/components/Icons/Close.astro'
+
+import { getSession } from 'auth-astro/server'
+const session = await getSession(Astro.request)
 ---
 
 <header id="header-nav" class="fixed top-0 w-full px-6 py-4 z-50">
@@ -34,9 +37,19 @@ import CloseIcon from '@/components/Icons/Close.astro'
         <CloseIcon />
       </a>
     </nav>
-    <a
-      href={'/Login'}
-      class={`
+    {
+      session ? (
+        <a href="/Login">
+          <img
+            class="rounded-full w-16 object-cover border border-solid border-white bg-cover transition-transform hover:scale-110 "
+            src={session?.user?.image}
+            alt="Imagen del usuario de [name de usuario]"
+          />
+        </a>
+      ) : (
+        <a
+          href={'/Login'}
+          class={`
                     text__glowing
                     text-sm 
                     ${styles.button} 
@@ -50,10 +63,13 @@ import CloseIcon from '@/components/Icons/Close.astro'
                     border-white
                     rounded-full
                     uppercase
+                    text-pretty
                     `}
-    >
-      Unete
-    </a>
+        >
+          Unete
+        </a>
+      )
+    }
 
     <a href="#header-menu" class="md:hidden"><MenuIcon /></a>
   </div>

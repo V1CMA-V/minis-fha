@@ -1,0 +1,14 @@
+---
+import { getSession } from 'auth-astro/server'
+const session = await getSession(Astro.request)
+---
+
+<section>
+  {
+    session?.user ? (
+      <img class="rounded-md " src={session.user.image} alt="Imagen del usuario de [name de usuario]"  />
+    ) : (
+      null
+    )
+  }
+</section>
