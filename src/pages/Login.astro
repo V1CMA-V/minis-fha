@@ -14,7 +14,7 @@ const session = await getSession(Astro.request)
   title="Iniciar sesion"
   description="Pagina donde puedes inciar sesion con tu cuenta de GOOGLE"
 >
-  <HeroContainer img="/galeria-background.webp">
+  <HeroContainer img="/archivo-page/img-19.webp">
     {
       session ? (
         <>
@@ -71,8 +71,15 @@ const session = await getSession(Astro.request)
       )
     }
   </HeroContainer>
-  <main class="mb-24">
-    <Logeado />
+  <main class="my-24">
+    {
+      session ? (
+        <Logeado />
+
+      ): (
+        <p class="m-auto w-full max-w-[1400px] text-center text-4xl font-semibold text-pretty">Para poder contratar un plan de adiestramineto o adoptar necesitas inicar session</p>
+      )
+    }
   </main>
 </Layout>
 

@@ -1,14 +1,51 @@
 ---
-import { getSession } from 'auth-astro/server'
-const session = await getSession(Astro.request)
+import styles from '../components/styles/Button.module.css'
 ---
 
-<section>
-  {
-    session?.user ? (
-      <img class="rounded-md " src={session.user.image} alt="Imagen del usuario de [name de usuario]"  />
-    ) : (
-      null
-    )
-  }
+<section
+  class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col items-center justify-between p-6 md:p-8"
+>
+  <h2
+    class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+  >
+    Elige la mejor opcion para ti
+  </h2>
+  <div class="md:w-1/2 text-pretty flex flex-row items-center justify-between">
+    <a
+      href="/PlanDeAdiestramiento"
+      class={`
+      text__glowing
+      text-md 
+      ${styles.button} 
+      w-fit
+      font-medium
+      no-underline
+      px-5
+      py-3
+      border
+      border-solid
+      border-white
+      rounded-full
+      uppercase
+      `}>Plan de Adiestramiento</a
+    >
+    <a
+      href="/PlanDeAdopcion"
+      class={`
+    text__glowing
+    text-md 
+    ${styles.button} 
+    w-fit
+    font-medium
+    no-underline
+    px-5
+    py-3
+    border
+    border-solid
+    border-white
+    rounded-full
+    uppercase
+    `}>Plan de Adopcion</a
+    >
+  </div>
 </section>
