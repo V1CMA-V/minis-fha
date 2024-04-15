@@ -19,7 +19,7 @@ const session = await getSession(Astro.request)
       session ? (
         <>
           <h1 class="lg:text-6xl text-5xl text-center uppercase font-tomaso tracking tracking-widest mb-5">
-            Hola {session.user?.name} 👋
+            Hola <br /> {session.user?.name} 👋
           </h1>
           <button
             id="logout"
