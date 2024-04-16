@@ -1,16 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 
-import SubtitleItem from '@/components/legalNotice/SubtitleItem.astro'
-import DescriptionItem from '@/components/legalNotice/DescriptionItem.astro'
-
-const H1_STYLES =
+const HEADING_STYLES =
   'mx-auto mt-16 mb-4 text-wrap text-4xl font-semibold tracking-wide uppercase'
+const SECTION_STYLES =
+  'max-w-5xl mx-auto my-10 text-pretty px-6 text-left text-lg leading-relaxed sm:px-20'
 ---
 
 <Layout
-  title=`Aviso Leal - Minis FHA${new Date().getFullYear()}`
-  description="El aviso legal establece las disposiciones legales y las responsabilidades relacionadas con los Premios ESLAND, abordando aspectos como términos de uso, responsabilidades legales y acuerdos entre el usuario y la entidad responsable"
+  title=`Política de privacidad - Minis FHA${new Date().getFullYear()}`
+  description="La Política de Privacidad de los Premios ESLAND describe cómo se recopilan, utilizan, protegen y comparten los datos personales de los usuarios"
 >
   <link
     rel="preload"
@@ -20,75 +19,303 @@ const H1_STYLES =
     crossorigin
     slot="preload"
   />
-  <main>
-    <section
-      class="max-w-5xl mx-auto my-24 text-pretty px-6 text-left text-lg leading-relaxed sm:px-20"
-    >
-      <h1 class={H1_STYLES}>Aviso Legal</h1>
-
-      <!-- Access and use -->
-      <SubtitleItem subtitle="Condiciones de acceso y uso" />
-      <DescriptionItem
-        description="El acceso, navegación y utilización del Sitio web www.premiosesland.com implica la aceptación expresa y sin reservas de todos los términos de las condiciones de uso incluidas en el presente Aviso Legal. Su Cumplimiento es exigible respecto de cualquier persona que acceda, navegue o utilice el Sitio web. Si el Usuario no está de acuerdo con la totalidad o parte de las condiciones de uso en los términos expuestos, deberá abstenerse de acceder, navegar o utilizar el Sitio Web."
-      />
-
-      <!-- Ownership and contact data -->
-      <SubtitleItem subtitle="Titularidad  y datos de contacto" />
-      <DescriptionItem
-        description="UBIQ S.L.U (en adelante, UBIQ) sociedad andorrana con NRT L-718097-X, con domicilio social en la calle Josep Viladomat, 4, Ed Sogas, 1-1 AD700 Escaldes Engordany (Andorra), inscrita en el Registro de Sociedades del Gobierno de Andorra con nº 23023, con correo electrónico [info@ubiq.ad], es la titular de la página Web www.premiosesland.com (en adelante, Sitio Web). Los Usuarios del Sitio Web podrán contactar con UBIQ mediante el envío de un correo electrónico a: info@ubiq.ad"
-      />
-
-      <!-- Purpose and content website -->
-      <SubtitleItem subtitle="Objeto y contenido del sitio web" />
-      <DescriptionItem
-        description="Este Sitio Web tiene por objeto informar a los Usuarios de los eventos que organice UBIQ en relación con las actividades de Streamers y ofrecer la posibilidad de participar en dichos eventos como jurado de los Premios Esland y seleccionar y emitir su voto a favor de sus Streamers y contenidos favoritos. El acceso a la información del Sitio Web no implica ni constituye relación contractual alguna entre el Usuario y UBIQ."
-      />
-      <DescriptionItem
-        description="UBIQ emplea todos los esfuerzos para asegurar que toda la información disponible en el Sitio Web sea completa y esté actualizada, revisando periódicamente el contenido del Sitio Web. No obstante, el Usuario reconoce y acepta que toda la información disponible en el Sitio Web se ofrece únicamente a efectos meramente informativos y que UBIQ no garantiza la precisión, idoneidad e integridad de la información contenida en el Sitio Web. Es responsabilidad exclusiva del Usuario el uso que haga de la información contenida en el Sitio Web."
-      />
-
-      <!-- Terms of use -->
-      <SubtitleItem subtitle="Condiciones de uso" , }, />
-      <DescriptionItem
-        description="Estas condiciones generales de uso regulan el acceso y navegación en el Sitio Web, cuyo acceso y uso tiene carácter libre y gratuito, no siendo necesario el previo registro de los Usuarios. No obstante, en el caso de que los Usuarios deseen participar de forma activa en los PREMIOS ESLAND como jurado y así seleccionar y votar a sus Streamers y contenidos favoritos, deberán disponer de una cuenta abierta en la plataforma de streaming www.twitch.tv y en el proceso de votación se informará a los Usuarios de los pasos a seguir para emitir sus votos en las diferentes categorías designadas."
-      />
-      <DescriptionItem
-        description="El acceso, uso o navegación en el Sitio Web atribuye la condición de Usuario e implica el conocimiento, la aceptación y el sometimiento a las advertencias legales y a las condiciones de uso incluidas en el presente Aviso Legal en la versión publicada en el momento en que el Usuario accede al Sitio Web. El Usuario acepta que el uso del Sitio Web tiene lugar bajo su única y exclusiva responsabilidad. Se recomienda al Usuario leer el presente Aviso Legal en cada ocasión en que se acceda a la Web."
-      />
-      <DescriptionItem
-        description="UBIQ se reserva, sin necesidad de previó aviso y en cualquier momento, el derecho a interrumpir, suspender temporalmente, desactivar y/ cancelar el acceso al Sitio Web o a cualesquiera de los elementos que se integran en el mismo."
-      />
-
-      <!-- Use of website and resposibility -->
-      <SubtitleItem subtitle="USO DEL SITIO WEB Y RESPONSABILIDAD" , />
-      <DescriptionItem
-        description="El Usuario es responsable del uso que realice del Sitio Web y de su contenido y lo hace bajo su propio riesgo. Al acceder acepta y se compromete a utilizar el Sitio Web, sus contenidos y servicios de conformidad con la Ley, el presente Aviso Legal, las buenas costumbres y el orden público, y deberán responder frente a UBIQ o terceros por cualquier daño que pueda producirse por el incumplimiento de estas obligaciones."
-      />
-      <DescriptionItem
-        description="No destruir, alterar, inutilizar o dañar los datos o programas informáticos o documentos electrónicos del Sitio Web."
-      />
-      <DescriptionItem
-        description="No obstaculizar el acceso de otros Usuarios al Sitio Web."
-      />
-      <DescriptionItem
-        description="No introducir virus o cualquier otro dispositivo que cause o pueda causar una alteración en los sistemas de UBIQ."
-      />
-      <DescriptionItem description="No copiar el Software." , />
-      <DescriptionItem
-        description="No distribuir, compartir, sublicenciar, prestar, arrendar o poner la Web a disposición de terceros."
-      />
-      <DescriptionItem
-        description="No someter a ingeniería inversa, descompilar o desmontar el Software del Sitio Web o tratar de obtener su código fuente."
-      />
-      <DescriptionItem
-        description="No almacenar, introducir o difundir en o desde el Sitio Web información o material difamatorio, injurioso, obsceno, amenazador, xenófogo o que incite a la violencia, discriminación por razón de raza, sexo, ideología, religión, atente contra la moral, el orden público, los derechos fundamentales, las libertades públicas, el honor, la intimidad o la imagen de terceros, y en general que infrinja la normativa vigente."
-      />
-      <DescriptionItem
-        description="El Usuario es el único y exclusivo responsable del acceso al Sitio Web y del uso que haga de la información y datos contenidos."
-      />
-      <DescriptionItem
-        description="UBIQ no responderá de ninguna consecuencia, daño o perjuicio derivados del acceso o uso del Sitio Web y de su contenido por parte de los Usuarios. UBIQ, como titular del Sitio Web, queda exonerado de cualquier responsabilidad que pudiera derivarse de las acciones del Usuario. De manera que el Usuario es el único responsable frente a cualquier reclamación iniciada por terceras personas contra UBIQ por el acceso o uso que el Usuario haga del Sitio Web."
-      />
+  <main class="py-8">
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Política de privacidad</h2>
+      <p>
+        Nos complace que visite la web oficial de PREMIOS ESLAND
+        www.premiosesland.com (en adelante, Sitio Web) y agradecemos su interés.
+      </p>
+      <p>
+        UBIQ S.L.U (en adelante, UBIQ) tiene el firme compromiso de cumplir con
+        la legislación vigente en materia de protección de datos personales para
+        garantizar la privacidad, el secreto y la seguridad de los datos
+        personales de los Usuarios aplicando medidas técnicas y organizativas
+        apropiadas al efecto.
+      </p>
+      <p>
+        La presente Política de Privacidad tiene por objeto informar a los
+        Usuarios sobre el tratamiento que UBIQ hace de los datos personales que
+        el Usuario facilite al acceder, navegar y utilizar los servicios que se
+        ofrecen en el Sitio Web, así como de las medidas de seguridad adoptadas,
+        del ejercicio de los derechos de los Usuarios y de la forma de contacto.
+      </p>
+      <p>
+        Los datos personales sólo serán obtenidos por UBIQ para su tratamiento,
+        cuando sean adecuados, pertinentes y no excesivos en relación con el
+        ámbito y las finalidades determinadas, explícitas y legítimas para las
+        que se hayan obtenido.
+      </p>
+      <p>
+        A continuación, cumplimiento con la normativa vigente en materia de
+        protección de datos personales proporcionamos a los Usuarios la
+        siguiente información:
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Responsable del tratamiento</h2>
+      <p>
+        UBIQ S.L.U (en adelante, UBIQ) sociedad andorrana con NRT L-718097-X,
+        con domicilio social en la calle Josep Viladomat, 4, Ed Sogas, 1-1 AD700
+        Escaldes Engordany (Andorra), inscrita en el Registro de Sociedades del
+        Gobierno de Andorra con nº 23023, con correo electrónico [info@ubiq.ad],
+        es la titular de la página Web www.premiosesland.com (en adelante, Sitio
+        Web).
+      </p>
+      <p>
+        "Los Usuarios pueden contactar con el Responsable del Tratamiento a
+        través de la siguiente dirección de correo electrónico: info@ubiq.ad
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Definiciones</h2>
+      <p>
+        A los efectos de la presente Política, los siguientes términos tendrán
+        el significado que se indica a continuación:
+      </p>
+      <ul>
+        <li>
+          <p>
+            “Datos Personales”: toda información sobre una persona física
+            identificada o identificable. Se considera persona física
+            identificable toda persona cuya identidad pueda determinarse,
+            directa o indirectamente, mediante un identificador.
+          </p>
+        </li>
+        <li>
+          <p>
+            “Responsable del Tratamiento”: Persona física o jurídica, autoridad
+            pública, servicio u otro organismo que, solo o junto con otros,
+            determine los fines y medios del tratamiento de datos.
+          </p>
+        </li>
+        <li>
+          <p>
+            “Encargado del Tratamiento”: Persona física o jurídica, autoridad
+            pública, servicio u otro organismo que trate datos personales por
+            cuenta del responsable del tratamiento.
+          </p>
+        </li>
+        <li>
+          <p>
+            “Interesado-Usuario”: Toda persona física identificada o
+            identificable cuyos datos personales sean objeto de tratamiento.
+          </p>
+        </li>
+        <li>
+          <p>
+            “Tratamiento de datos”: Cualquier operación o conjunto de
+            operaciones realizadas sobre Datos Personales o conjuntos de datos
+            personales, ya sea por procedimientos automatizados o no, como la
+            recogida, registro, organización, estructuración, conservación,
+            adaptación o modificación, extracción, consulta, utilización,
+            comunicación por transmisión, difusión o cualquier otra forma de
+            habilitación de acceso, cotejo o interconexión, limitación,
+            supresión o destrucción.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Finalidad del tratamiento</h2>
+      <p>
+        Gestionar las solicitudes de información recibidas a través de la
+        función de “Contacto” de la Web. Gestionar las votaciones de los PREMIOS
+        ESLAND realizadas por los Usuarios del Sitio Web (identificación,
+        validación y recuento de votos). Fines estadísticos de participación y
+        resultados de las votaciones en los PREMIOS ESLAND -para dar
+        cumplimiento a esta finalidad los datos personales serán objeto de un
+        proceso de anonimización-. Para poder participar como jurado en los
+        PREMIOS ESLAND, los Usuarios deberán pulsar en “Identifícate y Vota” y
+        serán redireccionados a la web de Twitch (www.twitch.tv) en la que
+        deberán disponer de una cuenta abierta en dicha plataforma de streaming.
+        Cuando el Usuario desde su cuenta pulse “Autorizar” estará manifestando
+        que ha leído y que acepta la Política de Privacidad de
+        www.premiosesland.com. A continuación, el Usuario podrá seleccionar sus
+        preferencias de voto de entre las distintas categorías definidas por
+        Streamers y contenidos siguiendo las indicaciones del Sitio Web y una
+        vez seleccionados sus votos deberá pulsar en “Enviar Mis Votos”. Las
+        votaciones y la identidad del Usuario se registrarán en la base de datos
+        de UBIQ. La identidad del Usuario se registrará mediante un código hash
+        -algoritmo matemático- (pseudonimizado).
+      </p>
+      <p>
+        Twitch Interactive, Inc. propietaria de www.twitch.tv actúa como
+        proveedor de los servicios de validación y verificación de la identidad
+        de los Usuarios que votan para evitar el fraude en el proceso de
+        votación.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Categoría de datos personales</h2>
+      <p>La categoría de datos que trata UBIQ en el Sitio Web, son:</p>
+      <p>
+        Correo electrónico en función de Contacto. Datos identificativos:
+        Identificación del Usuario mediante un código hash -algoritmo
+        matemático-. UBIQ no accede a los datos de la cuenta que los Usuarios
+        tienen en www.twitch.tv.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Base de legitimación</h2>
+      <p>
+        La base de legitimación para gestionar las comunicaciones que se reciban
+        a través de la función “Contacto” es el interés legítimo de UBIQ.
+      </p>
+      <p>
+        La base de legitimación del tratamiento de los datos personales de los
+        Usuarios que participan en los PREMIOS ESLAND es el consentimiento
+        expreso otorgado al participar como jurado y el interés legítimo de UBIQ
+        en la gestión de los eventos que organice y en la gestión de los PREMIOS
+        ESLAND.
+      </p>
+      <p>
+        El Usuario podrá revocar el consentimiento en cualquier momento. No
+        obstante, el tratamiento sobre los datos personales realizado con
+        anterioridad a la revocación del consentimiento será lícito.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Conservación de los datos</h2>
+      <p>
+        Los datos se conservarán durante el plazo estrictamente necesario para
+        dar cumplimiento a la finalidad para la que fueron recabados. No
+        obstante, UBIQ podrá conservar los datos para su puesta a disposición de
+        las autoridades competentes o para hacer frente a posibles
+        reclamaciones, en cuyo caso los datos se conservarán bloqueados hasta la
+        finalización de los plazos de prescripción, momento en que serán
+        eliminados con las medidas de seguridad adecuadas.
+      </p>
+      <p>
+        Finalizado el plazo de conservación, los datos personales podrán ser
+        objeto de un proceso de anonimización para fines estadísticos de los
+        PREMIOS ESLAND.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Comunicación de datos</h2>
+      <p>
+        UBIQ no cederá a terceros los datos facilitados por los Usuarios del
+        Sitio Web, salvo consentimiento previo y expreso de éstos o sea
+        necesario por imperativo legal (Administraciones públicas, Fuerzas y
+        Cuerpos de Seguridad del Estado, Ministerio Fiscal, Agencia Española de
+        Protección de Datos, etc).
+      </p>
+      <p>
+        UBIQ informa a los Usuarios que los datos personales podrán comunicarse
+        a proveedores de UBIQ para poder atender a la gestión de los PREMIOS
+        ESLAND, en cuyo caso, aquellos tendrán la condición de encargados del
+        tratamiento siguiendo las instrucciones de UBIQ sobre el tratamiento de
+        datos personales.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Derechos de los usuarios</h2>
+      <p>
+        UBIQ informa a los Usuarios que en referencia al tratamiento de sus
+        datos personales pueden ejercer los siguientes derechos:
+      </p>
+      <ul class="list-disc">
+        <li>
+          <p>
+            Derecho a revocar el consentimiento otorgado en cualquier momento.
+          </p>
+        </li>
+        <li>
+          <p>
+            Derecho a obtener información sobre si UBIQ trata datos personales
+            del Usuario.
+          </p>
+        </li>
+        <li>
+          <p>
+            Derecho de acceso, rectificación, portabilidad y supresión de sus
+            datos, y a la limitación u oposición al tratamiento.
+          </p>
+        </li>
+        <li>
+          <p>
+            Derecho a no ser objeto de decisiones individuales automatizadas,
+            incluyendo la elaboración de perfiles.
+          </p>
+        </li>
+        <li>
+          <p>
+            Derecho a presentar una reclamación ante el Agencia Española de
+            Protección de Datos (www.aepd.es), cuando el Usuario considere que
+            UBIQ ha vulnerado sus derechos en el tratamiento de datos
+            personales.
+          </p>
+        </li>
+      </ul>
+      <p>
+        Los Usuarios podrán ejercer sus derechos en cualquier momento y de forma
+        gratuita dirigiéndose por escrito a UBIQ S.L.U. por correo postal a la
+        dirección de calle Ganduxer, nº 129, C.P 08022 Barcelona o bien mediante
+        correo electrónico a la dirección [……info@fan.content.com…….], en ambos
+        casos deberá acompañarse copia del Documento Nacional de Identidad o
+        documento equivalente que acredite su identidad.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Enlaces de dominio de terceros</h2>
+      <p>
+        Para poder participar como jurado los Usuarios serán redireccionados al
+        dominio www.twitch.tv titularidad de un tercero -Twitch Interactive,
+        Inc-. Dicho dominio dispone de sus propias Condiciones de Uso, Política
+        de Privacidad y Política de Cookies. Por ello, recomendamos a los
+        Usuarios que las consulten antes de su utilización.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Redes sociales</h2>
+      <p>
+        Este Sitio Web puede contener enlaces que permiten acceder a diferentes
+        redes sociales pertenecientes y gestionadas por terceros (p.ej.
+        Facebook, Instagram, YouTube). Estos enlaces en el Sitio Web tienen por
+        único objeto facilitar a los Usuarios el acceso a redes sociales para
+        informales sobre los eventos organizados por UBIQ.
+      </p>
+      <p>
+        La activación y uso de estas aplicaciones puede conllevar la
+        identificación y autenticación del Usuario (login/contraseña) en las
+        plataformas correspondientes, completamente externas al Sitio Web y
+        fuera del control de UBIQ. Dichas redes sociales y plataformas disponen
+        de sus propias políticas de privacidad y del tratamiento de las cookies.
+        En este sentido, toda información y datos personales que el Usuario
+        proporcione a estas plataformas será bajo su propia y exclusiva
+        responsabilidad.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Cookies</h2>
+      <p>
+        Este Sitio Web no utiliza cookies para recoger información de los
+        Usuarios, únicamente se utilizan cookies propias, de sesión, con
+        finalidad técnica - aquellas que permiten al Usuario la navegación
+        segura a través del Sitio Web y la utilización de las distintas
+        funciones y servicios que se ofrecen en el Sitio Web. Para una
+        información más detallada acceda a la Política de Cookies.
+      </p>
+      <p>
+        No obstante, este Sitio Web puede contener enlaces a sitios web de
+        terceros con políticas de privacidad y de cookies ajenas a UBIQ y que el
+        Usuario podrá decidir si acepta o rechaza cuando acceda a esos sitios
+        web.
+      </p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`></h2>
+      <p></p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Transferencias internacionales</h2>
+      <p>Los datos personales pueden alojarse en servidores ubicados fuera del Espacio Económico Europeo (Estados Unidos, Japón, Australia, Japón), al participar en los PREMIOS ESLAND consiente dicha transferencia de datos y se le informa que en éstas se garantiza la existencia de una Decisión de Adecuación del Comité Europeo de Protección de Datos o bien la adopción de medidas de garantía complementarias a fin de garantizar un nivel de adecuación de protección alineado con el Reglamento General de Protección de Datos de la Unión Europea.</p>
+    </section>
+    <section class=`${SECTION_STYLES}`>
+      <h2 class=`${HEADING_STYLES}`>Modificaciones de la política de privacidad</h2>
+      <p>UBIQ se reserva el derecho a modificar esta Política de privacidad en función de exigencias legislativas, reglamentarias o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos y/o por el Comité Europeo de Protección de Datos, por ello se aconseja a los Usuarios que la visiten periódicamente. Cuando se produzcan cambios significativos en esta Política, éstos se publicarán en el Sitio Web.</p>
+      <p><em>Fecha de la última actualización: 15 del 4 de 2024.</em></p>
     </section>
   </main>
 </Layout>

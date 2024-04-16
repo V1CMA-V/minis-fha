@@ -1,0 +1,94 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+import SubtitleItem from '@/components/legalNotice/SubtitleItem.astro'
+import DescriptionItem from '@/components/legalNotice/DescriptionItem.astro'
+
+const H1_STYLES =
+  'mx-auto mt-16 mb-4 text-wrap text-4xl font-semibold tracking-wide uppercase'
+---
+
+<Layout
+  title=`Aviso Legal - Minis FHA${new Date().getFullYear()}`
+  description="El aviso legal establece las disposiciones legales y las responsabilidades relacionadas con los Premios ESLAND, abordando aspectos como términos de uso, responsabilidades legales y acuerdos entre el usuario y la entidad responsable"
+>
+  <link
+    rel="preload"
+    href="/fonts/jura.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+    slot="preload"
+  />
+  <main>
+    <section
+      class="max-w-5xl mx-auto my-24 text-pretty px-6 text-left text-lg leading-relaxed sm:px-20"
+    >
+      <h1 class={H1_STYLES}>Aviso Legal</h1>
+
+      <!-- Access and use -->
+      <SubtitleItem subtitle="Condiciones de acceso y uso" />
+      <DescriptionItem
+        description="El acceso, navegación y utilización del Sitio web www.premiosesland.com implica la aceptación expresa y sin reservas de todos los términos de las condiciones de uso incluidas en el presente Aviso Legal. Su Cumplimiento es exigible respecto de cualquier persona que acceda, navegue o utilice el Sitio web. Si el Usuario no está de acuerdo con la totalidad o parte de las condiciones de uso en los términos expuestos, deberá abstenerse de acceder, navegar o utilizar el Sitio Web."
+      />
+
+      <!-- Ownership and contact data -->
+      <SubtitleItem subtitle="Titularidad  y datos de contacto" />
+      <DescriptionItem
+        description="UBIQ S.L.U (en adelante, UBIQ) sociedad andorrana con NRT L-718097-X, con domicilio social en la calle Josep Viladomat, 4, Ed Sogas, 1-1 AD700 Escaldes Engordany (Andorra), inscrita en el Registro de Sociedades del Gobierno de Andorra con nº 23023, con correo electrónico [info@ubiq.ad], es la titular de la página Web www.premiosesland.com (en adelante, Sitio Web). Los Usuarios del Sitio Web podrán contactar con UBIQ mediante el envío de un correo electrónico a: info@ubiq.ad"
+      />
+
+      <!-- Purpose and content website -->
+      <SubtitleItem subtitle="Objeto y contenido del sitio web" />
+      <DescriptionItem
+        description="Este Sitio Web tiene por objeto informar a los Usuarios de los eventos que organice UBIQ en relación con las actividades de Streamers y ofrecer la posibilidad de participar en dichos eventos como jurado de los Premios Esland y seleccionar y emitir su voto a favor de sus Streamers y contenidos favoritos. El acceso a la información del Sitio Web no implica ni constituye relación contractual alguna entre el Usuario y UBIQ."
+      />
+      <DescriptionItem
+        description="UBIQ emplea todos los esfuerzos para asegurar que toda la información disponible en el Sitio Web sea completa y esté actualizada, revisando periódicamente el contenido del Sitio Web. No obstante, el Usuario reconoce y acepta que toda la información disponible en el Sitio Web se ofrece únicamente a efectos meramente informativos y que UBIQ no garantiza la precisión, idoneidad e integridad de la información contenida en el Sitio Web. Es responsabilidad exclusiva del Usuario el uso que haga de la información contenida en el Sitio Web."
+      />
+
+      <!-- Terms of use -->
+      <SubtitleItem subtitle="Condiciones de uso" , }, />
+      <DescriptionItem
+        description="Estas condiciones generales de uso regulan el acceso y navegación en el Sitio Web, cuyo acceso y uso tiene carácter libre y gratuito, no siendo necesario el previo registro de los Usuarios. No obstante, en el caso de que los Usuarios deseen participar de forma activa en los PREMIOS ESLAND como jurado y así seleccionar y votar a sus Streamers y contenidos favoritos, deberán disponer de una cuenta abierta en la plataforma de streaming www.twitch.tv y en el proceso de votación se informará a los Usuarios de los pasos a seguir para emitir sus votos en las diferentes categorías designadas."
+      />
+      <DescriptionItem
+        description="El acceso, uso o navegación en el Sitio Web atribuye la condición de Usuario e implica el conocimiento, la aceptación y el sometimiento a las advertencias legales y a las condiciones de uso incluidas en el presente Aviso Legal en la versión publicada en el momento en que el Usuario accede al Sitio Web. El Usuario acepta que el uso del Sitio Web tiene lugar bajo su única y exclusiva responsabilidad. Se recomienda al Usuario leer el presente Aviso Legal en cada ocasión en que se acceda a la Web."
+      />
+      <DescriptionItem
+        description="UBIQ se reserva, sin necesidad de previó aviso y en cualquier momento, el derecho a interrumpir, suspender temporalmente, desactivar y/ cancelar el acceso al Sitio Web o a cualesquiera de los elementos que se integran en el mismo."
+      />
+
+      <!-- Use of website and resposibility -->
+      <SubtitleItem subtitle="USO DEL SITIO WEB Y RESPONSABILIDAD" , />
+      <DescriptionItem
+        description="El Usuario es responsable del uso que realice del Sitio Web y de su contenido y lo hace bajo su propio riesgo. Al acceder acepta y se compromete a utilizar el Sitio Web, sus contenidos y servicios de conformidad con la Ley, el presente Aviso Legal, las buenas costumbres y el orden público, y deberán responder frente a UBIQ o terceros por cualquier daño que pueda producirse por el incumplimiento de estas obligaciones."
+      />
+      <DescriptionItem
+        description="No destruir, alterar, inutilizar o dañar los datos o programas informáticos o documentos electrónicos del Sitio Web."
+      />
+      <DescriptionItem
+        description="No obstaculizar el acceso de otros Usuarios al Sitio Web."
+      />
+      <DescriptionItem
+        description="No introducir virus o cualquier otro dispositivo que cause o pueda causar una alteración en los sistemas de UBIQ."
+      />
+      <DescriptionItem description="No copiar el Software." , />
+      <DescriptionItem
+        description="No distribuir, compartir, sublicenciar, prestar, arrendar o poner la Web a disposición de terceros."
+      />
+      <DescriptionItem
+        description="No someter a ingeniería inversa, descompilar o desmontar el Software del Sitio Web o tratar de obtener su código fuente."
+      />
+      <DescriptionItem
+        description="No almacenar, introducir o difundir en o desde el Sitio Web información o material difamatorio, injurioso, obsceno, amenazador, xenófogo o que incite a la violencia, discriminación por razón de raza, sexo, ideología, religión, atente contra la moral, el orden público, los derechos fundamentales, las libertades públicas, el honor, la intimidad o la imagen de terceros, y en general que infrinja la normativa vigente."
+      />
+      <DescriptionItem
+        description="El Usuario es el único y exclusivo responsable del acceso al Sitio Web y del uso que haga de la información y datos contenidos."
+      />
+      <DescriptionItem
+        description="UBIQ no responderá de ninguna consecuencia, daño o perjuicio derivados del acceso o uso del Sitio Web y de su contenido por parte de los Usuarios. UBIQ, como titular del Sitio Web, queda exonerado de cualquier responsabilidad que pudiera derivarse de las acciones del Usuario. De manera que el Usuario es el único responsable frente a cualquier reclamación iniciada por terceras personas contra UBIQ por el acceso o uso que el Usuario haga del Sitio Web."
+      />
+    </section>
+  </main>
+</Layout>

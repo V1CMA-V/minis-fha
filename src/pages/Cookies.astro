@@ -1,0 +1,264 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+import CookieTypeDescriptionItem from '@/components/cookies/CookieTitleDescriptionItem.astro'
+import CookieDescriptionLinkItem from '@/components/cookies/CookieDescriptionLinkItem.astro'
+import CookieLink from '@/components/cookies/CookieLink.astro'
+
+const { currentLocale } = Astro
+
+const H1_STYLES =
+  'mx-auto mt-16 mb-4 text-wrap text-4xl font-semibold tracking-wide uppercase'
+
+const ANALYTICS = [
+  {
+    NAME: '_ga',
+    EXPIRE: '2 años',
+    PROVIDER: {
+      NAME: 'Google',
+      URL: 'https://google.com/',
+    },
+    OBJECTIVE: 'Se usa para distinguir a los usuarios.',
+    OBJECTIVE_URL: '',
+  },
+  {
+    NAME: '_gid',
+    EXPIRE: '24 horas',
+    PROVIDER: {
+      NAME: 'Google',
+      URL: 'https://google.com/',
+    },
+    OBJECTIVE: 'Se usa para distinguir a los usuarios.',
+    OBJECTIVE_URL: '',
+  },
+  {
+    NAME: '_ga_J8PJQBXG7J',
+    EXPIRE: '2 años',
+    PROVIDER: {
+      NAME: 'Google',
+      URL: 'https://google.com/',
+    },
+    OBJECTIVE: 'Se usa para mantener el estado de la sesión.',
+    OBJECTIVE_URL: '',
+  },
+  {
+    NAME: '_gac_gb_J8PJQBXG7J',
+    EXPIRE: '90 días',
+    PROVIDER: {
+      NAME: 'Google',
+      URL: 'https://google.com/',
+    },
+    OBJECTIVE:
+      'Incluye información relacionada con la campaña. Si has vinculado tus cuentas de Google Analytics y Google Ads, las etiquetas de conversión en sitio web de Google Ads leerán esta cookie, a menos que la inhabilites',
+    OBJECTIVE_URL: 'https://support.google.com/google-ads/answer/7521212?hl=es',
+  },
+]
+---
+
+<Layout
+  title=`Política de cookies - Minis FHA  ${new Date().getFullYear()}`
+  description="La Política de Cookies de los Premios ESLAND informa sobre el uso de cookies y tecnologías similares en el sitio web"
+>
+  <main>
+    <section
+      class="max-w-5xl mx-auto my-24 text-pretty px-6 text-left text-lg leading-relaxed sm:px-20"
+    >
+      <h1 class={H1_STYLES}>Política de Cookies</h1>
+      <p>
+        Esta Política de cookies es parte integrante del Aviso Legal y la
+        Política de Privacidad de www.premiosesland.com (en adelante, Sitio
+        Web), titularidad de UBIQ S.L.U (en adelante, UBIQ) con domicilio social
+        en la calle Josep Viladomat, 4, Ed Sogas, 1-1 AD700 Escaldes Engordany,
+        y responsable de las Cookies y del tratamiento de datos personales
+        obtenidos a través de cookies propias y de terceros que se usan en este
+        Sitio Web.
+      </p>
+      <p>
+        Este Sitio Web utiliza cookies de terceros en concreto cookies
+        analíticas de Google Analytics para analizar la actividad que realizan
+        los usuarios cuando visitan la web con fines estadísticos.
+      </p>
+      <p>
+        Puedes aceptar todas las cookies, rechazarlas o configurar tus
+        preferencias en el panel de configuración de cookies. En cualquier
+        momento podrás revocar el consentimiento o modificar tus preferencias de
+        configuración de cookies accediendo nuevamente al panel de
+        configuración. Asimismo, puedes evitar la descarga de cookies o eliminar
+        las instaladas a través de la configuración de tu navegador, evitando
+        que las cookies se almacenen en tu dispositivo. Es muy importante que
+        leas la presente política de cookies.
+      </p>
+      <p>
+        Te informamos de la posibilidad de que el rechazo y desactivación de las
+        cookies puede afectar o dificultar la navegación o la prestación de los
+        servicios ofrecidos en este Sitio Web.
+      </p>
+      <h1 class={H1_STYLES}>¿Qué son las cookies?</h1>
+      <p>
+        Las cookies son identificadores alfanuméricos que contienen información
+        que se instala en el dispositivo del Usuario y se descargan en el
+        navegador Web del Usuario cuando éste visita y accede a una página web.
+        Su finalidad principal es identificar y reconocer de forma unívoca el
+        dispositivo del Usuario cada vez que accede al Sitio Web, además de
+        mejorar la calidad y ofrecer un mejor uso del Sitio Web.
+      </p>
+      <p>
+        Se trata de pequeños archivos de texto que quedan almacenados en el
+        disco duro del ordenador y que sirven para identificar al Usuario cuando
+        se conecta nuevamente al sitio web. Su objetivo es registrar la visita
+        del Usuario y guardar cierta información. Su uso es común y frecuente en
+        la web ya que permite a las páginas funcionar de manera más eficiente y
+        conseguir una mayor personalización y análisis sobre el comportamiento
+        del Usuario.
+      </p>
+      <h1 class={H1_STYLES}>¿Qué tipos de cookies existen?</h1>
+      <CookieTypeDescriptionItem
+        title="1.- Según la entidad que las gestione:"
+        description="Las cookies propias son aquellas que se instalan en el terminal del Usuario desde el dominio gestionado por el responsable de la Web y las cookies de terceros son aquellas que se instalan en el terminal del Usuario desde un dominio gestionado por terceros que tratan los datos obtenidos a través de dichas cookies."
+      />
+      <CookieTypeDescriptionItem
+        title="2.- Según el plazo de tiempo que permanezcan activas:"
+        description="Las cookies de sesión son aquellas que permanecen activadas y recaban datos mientras el usuario accede a una web y desaparecen al terminar la sesión, y las cookies permanentes son aquellas que siguen activas y de las que se recaba información durante un periodo de tiempo definido por el responsable de la cookie o hasta la su desactivación o eliminación por parte del Usuario."
+      />
+      <CookieTypeDescriptionItem
+        title="3.- Cookies técnicas:"
+        description="Son aquellas que permiten al Usuario navegar a través una página web y utilizar las diferentes opciones o servicios que se ofrecen, como, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, realizar una solicitud de inscripción, utilizar elementos de seguridad durante la navegación, etc. Al ser necesarias para el funcionamiento de la web, estas cookies estarán activadas y no podrán rechazarse."
+      />
+      <CookieTypeDescriptionItem
+        title="4.- Cookies de rendimiento u operativas:"
+        description="Este tipo de Cookie recuerda sus preferencias en la navegación por la Web por lo que no tiene que volver a configurar el servicio cada vez que usted visita la Web. A modo de ejemplo, en esta tipología se incluyen: Ajustes de volumen de reproductores de vídeo o sonido. Las velocidades de transmisión de vídeo que sean compatibles con su navegador. Estas cookies pueden desactivarse por el Usuario, si bien ello puede afectar el buen funcionamiento de los servicios de la Web."
+      />
+      <CookieTypeDescriptionItem
+        title="5.- Cookies analíticas o de medición:"
+        description="Son aquellas que permiten realizar un seguimiento y análisis del comportamiento de los Usuarios de la Web con la finalidad de obtener datos estadísticos y mejorar el funcionamiento de la Web. Cada vez que un Usuario visita una Web, una herramienta de un proveedor externo genera una cookie analítica en el ordenador del Usuario."
+      />
+      <CookieTypeDescriptionItem
+        title="6.- Cookies de publicidad:"
+        description="Este tipo de cookies permiten obtener información sobre la duración o frecuencia de visualización de posiciones publicitarias, la interacción con las mismas, o los patrones de navegación y/o comportamientos del Usuario ya que ayudan a conformar un perfil de interés publicitario. De este modo, permiten ofrecer publicidad afín a los intereses del Usuario."
+      />
+      <h1 class={H1_STYLES}>
+        RECHAZAR, CONFIGURAR, DESHABILITAR O BLOQUEAR LAS COOKIES:
+      </h1>
+      <p>
+        Bien en el banner o en el panel de configuración de cookies -siempre
+        activo y accesible- el Usuario tiene la posibilidad de aceptar o
+        rechazar las cookies, así como configurar sus preferencias de aquellas
+        cookies cuyo tratamiento requiera del consentimiento del Usuario.
+      </p>
+      <p>
+        El Usuario podrá revocar el consentimiento inicialmente otorgado o
+        modificar sus preferencias, en cualquier momento accediendo al panel de
+        configuración.
+      </p>
+      <p>
+        Asimismo, el Usuario puede bloquear y eliminar las cookies instaladas en
+        su equipo mediante la configuración de las opciones de su navegador.
+      </p>
+      <p>
+        Se pueden configurar los diferentes navegadores para avisar al Usuario
+        de la recepción de cookies y, si se desea, impedir su instalación en el
+        equipo. Asimismo, el Usuario puede revisar en su navegador qué cookies
+        tiene instaladas y cuál es el plazo de caducidad de las mismas, pudiendo
+        eliminarlas. Puede encontrar información sobre cómo hacerlo, en relación
+        con los navegadores más comunes, en los enlaces que se relacionan a
+        continuación:
+      </p>
+      <CookieDescriptionLinkItem
+        description="Chrome:"
+        url="https://support.google.com/chrome/answer/95647?hl=es"
+      />
+      <CookieDescriptionLinkItem
+        description="Para más información sobre la administración de las cookies en Internet Explorer:"
+        url="http://windows.microsoft.com/es-es/windows-vista/cookies-frequently-asked-questions"
+      />
+      <CookieDescriptionLinkItem
+        description="Para más información sobre la administración de las cookies en Mozilla Firefox:"
+        url="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias"
+      />
+      <CookieDescriptionLinkItem
+        description="Para más información sobre la administración de las cookies en Safari:"
+        url="http://www.apple.com/es/privacy/use-of-cookies"
+      />
+      <CookieDescriptionLinkItem
+        description="Para más información sobre la administración de las cookies en Opera:"
+        url="http://help.opera.com/Windows/11.50/es-ES/cookies.html"
+      />
+      <CookieDescriptionLinkItem
+        description="Si desea dejar de ser seguido por Google Analytics visite:"
+        url="http://tools.google.com/dlpage/gaoptout"
+      />
+      <h1 class={H1_STYLES}>Para saber más sobre las cookies</h1>
+      <CookieDescriptionLinkItem
+        description="Puede obtener más información sobre la publicidad online basada en el comportamiento y la privacidad online en el siguiente enlace:"
+        url="http://www.youronlinechoices.com/es"
+      />
+      <CookieDescriptionLinkItem
+        description="Protección de datos de Google Analytics"
+        url="http://www.google.com/analytics/learn/privacy.html"
+      />
+      <CookieDescriptionLinkItem
+        description="Cómo usa Google Analytics las cookies:"
+        url="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage?hl=es#analyticsjs"
+      />
+      <h1 class={H1_STYLES}>Terceros y Transferencias Internacionales</h1>
+      <p>
+        Puede obtener información sobre el tratamiento realizado por terceros y
+        posibles transferencias de datos a otros países que realicen estos
+        terceros identificados en esta política, en los enlaces que se facilitan
+        en la presente política de cookies. Los diferentes mecanismos de
+        regularización de las transferencias internacionales, en el caso de
+        existir, serán informados por dichos terceros.
+      </p>
+      <h1 class={H1_STYLES}>
+        Actualizaciones y cambios en la política de cookies
+      </h1>
+      <p>
+        FAN CONTENT pueden modificar esta Política de Cookies en función de
+        exigencias legislativas, reglamentarias, o con la finalidad de adaptar
+        dicha política a las instrucciones dictadas por la Agencia Española de
+        Protección de Datos y por el Comité Europeo de Protección de Datos, por
+        ello se aconseja a los Usuarios que la visiten periódicamente.
+      </p>
+      <h1 class={H1_STYLES}>¿Qué cookies utiliza este Sitio WEB?</h1>
+      <div class="overflow-x-auto">
+        <table class="w-fulltext-left rtl:text-right">
+          <thead class="uppercase">
+            <tr>
+              <th class="px-6 py-3">Nombre</th>
+              <th class="px-6 py-3">Caducidad</th>
+              <th class="px-6 py-3">Proveedor</th>
+              <th class="px-6 py-3">Finalidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              ANALYTICS.map(
+                ({ NAME, EXPIRE, PROVIDER, OBJECTIVE, OBJECTIVE_URL }) => (
+                  <tr class="odd:bg-[#007aff]">
+                    <td class="px-6 py-3">{NAME}</td>
+                    <td class="px-6 py-3">{EXPIRE}</td>
+                    <td class="px-6 py-3">
+                      <CookieLink url={PROVIDER.URL} text={PROVIDER.NAME} />
+                    </td>
+                    <td class="px-6 py-3">
+                      <p>
+                        {OBJECTIVE}
+                        {OBJECTIVE_URL.length && (
+                          <CookieLink
+                            url={OBJECTIVE_URL}
+                            text="Más información"
+                          />
+                        )}
+                      </p>
+                    </td>
+                  </tr>
+                )
+              )
+            }
+          </tbody>
+        </table>
+      </div>
+      <p>Fecha de la última actualización: 15 del 4 de 2024.</p>
+    </section>
+  </main>
+</Layout>
