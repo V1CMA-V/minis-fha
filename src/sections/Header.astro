@@ -42,8 +42,8 @@ const session = await getSession(Astro.request)
         <a href="/Login">
           <img
             class="rounded-full w-16 object-cover border border-solid border-white bg-cover transition-transform hover:scale-110 "
-            src={session?.user?.image}
-            alt="Imagen del usuario de [name de usuario]"
+            src={session.user?.image}
+            alt={`Imagen del perfil de ${session.user?.name}`}
           />
         </a>
       ) : (

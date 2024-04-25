@@ -1,0 +1,94 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import styles from '../components/styles/Button.module.css'
+---
+
+<Layout
+  title="Plan de adiestramiento Canino"
+  description="Pla de adiiestramiento Canino por minis FHA"
+>
+  <main class="pb-24">
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-center text-pretty px-6 text-xl sm:px-20 flex flex-col items-center justify-center p-6 md:p-8"
+    >
+      <h1
+        class="lg:text-3xl text-xl text-center uppercase tracking tracking-widest"
+      >
+        Plan de adiestramiento
+      </h1>
+
+      <p class="text-center text-lg my-6">
+        Este es tu plan de adiestramiento, si tienes alguna duda o pregunta
+        puedes contactar a tu entrenador.
+      </p>
+
+      <div class="flex flex-col items-center gap-y-8 w-fu max-w-[900px]">
+        <button
+          id=""
+          class={`
+          focus:bg-white
+          focus:text-black
+                    text__glowing
+                    ${styles.button} 
+                    w-fit
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    animate-blurred-fade-in
+                    `}
+        >
+          Plan Básico de Adiestramiento
+        </button>
+
+        <button
+          id=""
+          class={`
+        focus:bg-white
+        focus:text-black
+                  text__glowing
+                  ${styles.button} 
+                  w-fit
+                  no-underline
+                  px-5
+                  py-3
+                  border
+                  border-solid
+                  border-white
+                  rounded-full
+                  uppercase
+                  animate-blurred-fade-in
+                  `}
+        >
+          Plan Avanzado de Adiestramiento
+        </button>
+
+        <button
+          id=""
+          class={`
+          focus:bg-white
+          focus:text-black
+                    text__glowing
+                    ${styles.button} 
+                    w-fit
+                    no-underline
+                    px-5
+                    py-3
+                    border
+                    border-solid
+                    border-white
+                    rounded-full
+                    uppercase
+                    animate-blurred-fade-in
+                    `}
+        >
+          Plan de adiestramiento personalizado
+        </button>
+      </div>
+    </section>
+  </main></Layout
+>
