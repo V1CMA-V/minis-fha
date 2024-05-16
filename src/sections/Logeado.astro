@@ -24,13 +24,13 @@ const suscriptions = await db
   class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col items-center justify-between p-6 md:p-8"
 >
   <h2
-    class="mx-auto mb-10 text-balance text-left text-xl lg:text-3xl font-semibold tracking-wide"
+    class="mx-auto mb-10 text-balance text-center text-xl lg:text-3xl font-semibold tracking-wide"
   >
     Tus mascotas con sus planes de adiestramiento
   </h2>
   <!-- Rendering Suscription Pets -->
   <!-- Add new mascot -->
-  <div class="max-w-full text-pretty gap-5 grid grid-cols-4">
+  <div class="max-w-full text-pretty gap-5 grid grid-cols-1 lg:grid-cols-4 justify-between">
     {
       suscriptions.map((suscription) => (
         <div
@@ -56,6 +56,9 @@ const suscriptions = await db
           </p>
           <p>
             <strong>Plan activo:</strong> {suscription.Plan.name}
+          </p>
+          <p>
+            <strong>Objetivo:</strong> {suscription.Plan.description}
           </p>
         </div>
       ))
