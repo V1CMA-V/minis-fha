@@ -74,10 +74,12 @@ const session = await getSession(Astro.request)
   <main class="my-24">
     {
       session ? (
-        <Logeado />
-
-      ): (
-        <p class="m-auto w-full max-w-[1400px] text-center text-4xl font-semibold text-pretty">Para poder contratar un plan de adiestramineto o adoptar necesitas inicar session</p>
+        <Logeado></Logeado>
+      ) : (
+        <p class="m-auto w-full max-w-[1400px] text-center text-4xl font-semibold text-pretty">
+          Para poder contratar un plan de adiestramineto o adoptar necesitas
+          inicar session
+        </p>
       )
     }
   </main>

@@ -1,51 +1,73 @@
 ---
+import Dog from '../components/Icons/Dog.astro'
+
+import { generateUserId } from '@/lib/users'
+
 import styles from '../components/styles/Button.module.css'
+
+import { db, Plan, SuscriptionPet, eq } from 'astro:db'
+import { getSession } from 'auth-astro/server'
+const session = await getSession(Astro.request)
+if (!session || session?.user?.email == null) {
+  return new Response('Unauthorized', { status: 401 })
+}
+const user_id = generateUserId(session.user)
+
+const suscriptions = await db
+  .select()
+  .from(SuscriptionPet)
+  .innerJoin(Plan, eq(SuscriptionPet.plan_id, Plan.id))
+  .where(eq(SuscriptionPet.user_id, user_id))
 ---
 
 <section
   class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col items-center justify-between p-6 md:p-8"
 >
   <h2
-    class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+    class="mx-auto mb-10 text-balance text-left text-xl lg:text-3xl font-semibold tracking-wide"
   >
-    Elige el plan de tu preferencia
+    Tus mascotas con sus planes de adiestramiento
   </h2>
-  <div class="md:w-1/2 text-pretty flex flex-row items-center justify-between">
-    <a
-      href="/PlanDeAdiestramiento"
-      class={`
-      text__glowing
-      text-md 
-      ${styles.button} 
-      w-fit
-      font-medium
-      no-underline
-      px-5
-      py-3
-      border
-      border-solid
-      border-white
-      rounded-full
-      uppercase
-      `}>Adiestramiento</a
-    >
-    <a
-      href="/PlanDeAdopcion"
-      class={`
-    text__glowing
-    text-md 
-    ${styles.button} 
-    w-fit
-    font-medium
-    no-underline
-    px-5
-    py-3
-    border
-    border-solid
-    border-white
-    rounded-full
-    uppercase
-    `}>Adopcion</a
-    >
+  <!-- Rendering Suscription Pets -->
+  <!-- Add new mascot -->
+  <div class="max-w-full text-pretty gap-5 grid grid-cols-4">
+    {
+      suscriptions.map((suscription) => (
+        <div
+          class={` border
+          border-solid
+          border-white
+          rounded-xl
+          text__glowing
+          px-5
+          py-3
+          min-h-[200px]
+          ${styles.button}
+          `}
+        >
+          <p>
+            <strong>Nombre:</strong> {suscription.SuscriptionPet.pet_name}
+          </p>
+          <p>
+            <strong>Edad:</strong> {suscription.SuscriptionPet.age} meses
+          </p>
+          <p>
+            <strong>Raza:</strong> {suscription.SuscriptionPet.breed}
+          </p>
+          <p>
+            <strong>Plan activo:</strong> {suscription.Plan.name}
+          </p>
+        </div>
+      ))
+    }
   </div>
+
+  <a
+    href="/PlanDeAdiestramiento"
+    class="border p-10 rounded-xl text-center flex flex-col items-center justify-center max-w-md"
+  >
+    <p>Agregar a una nueva mascota</p>
+
+    <Dog class="" />
+  </a>
 </section>
