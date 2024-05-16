@@ -1,94 +1,187 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import styles from '../components/styles/Button.module.css'
+import { db, Plan, SuscriptionPet, NOW } from 'astro:db'
+const plans = await db.select().from(Plan)
+
+import { generateUserId } from '@/lib/users'
+
+import { getSession } from 'auth-astro/server'
+const session = await getSession(Astro.request)
+
+if (Astro.request.method === 'POST') {
+  // Get the data from the form
+  const formData = await Astro.request.formData()
+  const pet_name = formData.get('floating_name')
+  const age = Number(formData.get('floating_age'))
+  const plan_id = formData.get('plan_select')
+
+  const breed =
+    formData.get('breed_select') === 'Other'
+      ? formData.get('floating_breed')
+      : formData.get('breed_select')
+
+  const suscriptionDate = NOW
+  const session = await getSession(Astro.request)
+  if (!session || session?.user?.email == null) {
+    return new Response('Unauthorized', { status: 401 })
+  }
+  const user_id = generateUserId(session.user)
+
+  const id = `${user_id}-${pet_name}`
+  // Save the data in the database
+
+  if (
+    typeof pet_name !== 'string' ||
+    typeof age !== 'number' ||
+    typeof breed !== 'string' ||
+    typeof plan_id !== 'string'
+  ) {
+    return new Response('Invalid data', { status: 400 })
+  }
+  await db.insert(SuscriptionPet).values({
+    id,
+    user_id,
+    pet_name,
+    age,
+    breed,
+    plan_id,
+    suscriptionDate,
+  })
+}
 ---
 
 <Layout
-  title="Plan de adiestramiento Canino"
-  description="Pla de adiiestramiento Canino por minis FHA"
+  title="Inscripcion Plan de adiestramiento Canino"
+  description="Inscripción a Plan de Adiestramiento Canino en Minis FHA - Fundación Huellas de Amor - Adiestramiento Canino en Puebla"
 >
-  <main class="pb-24">
-    <section
-      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-center text-pretty px-6 text-xl sm:px-20 flex flex-col items-center justify-center p-6 md:p-8"
+  <main
+    class="pb-24 w-full max-w-[1110px] mx-auto py-32 animate-blurred-fade-in"
+  >
+    <h1
+      class="lg:text-3xl text-xl text-center uppercase tracking tracking-widest"
     >
-      <h1
-        class="lg:text-3xl text-xl text-center uppercase tracking tracking-widest"
-      >
-        Plan de adiestramiento
-      </h1>
+      Inscirpción a Plan de Adiestramiento Canino
+    </h1>
 
-      <p class="text-center text-lg my-6">
-        Este es tu plan de adiestramiento, si tienes alguna duda o pregunta
-        puedes contactar a tu entrenador.
-      </p>
+    <p class="text-center text-2xl my-6 text-pretty tracking-wide font-normal">
+      ¡Bienvenido a tu plan de adiestramiento canino!
+    </p>
+    <p class="text-pretty text-2xl text-start mb-24">
+      Para inscribir a tu mascota en el plan de adiestramiento canino, por favor
+      llena el siguiente formulario con los datos de tu mascota. Nos pondremos
+      en contacto contigo para confirmar tu inscripción.
+    </p>
 
-      <div class="flex flex-col items-center gap-y-8 w-fu max-w-[900px]">
-        <button
-          id=""
-          class={`
-          focus:bg-white
-          focus:text-black
-                    text__glowing
-                    ${styles.button} 
-                    w-fit
-                    no-underline
-                    px-5
-                    py-3
-                    border
-                    border-solid
-                    border-white
-                    rounded-full
-                    uppercase
-                    animate-blurred-fade-in
-                    `}
+    <!-- Formulario -->
+    <form method="POST" class="flex flex-col gap-5 mb-10">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          type="text"
+          name="floating_name"
+          id="floating_name"
+          class="block py-2.5 px-0 w-full text-xl bg-transparent border-0 border-b-2 appearance-none text-white border-white-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="floating_name"
+          class="peer-focus:font-medium absolute text-lg text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Nombre de tu mascota</label
         >
-          Plan Básico de Adiestramiento
-        </button>
-
-        <button
-          id=""
-          class={`
-        focus:bg-white
-        focus:text-black
-                  text__glowing
-                  ${styles.button} 
-                  w-fit
-                  no-underline
-                  px-5
-                  py-3
-                  border
-                  border-solid
-                  border-white
-                  rounded-full
-                  uppercase
-                  animate-blurred-fade-in
-                  `}
-        >
-          Plan Avanzado de Adiestramiento
-        </button>
-
-        <button
-          id=""
-          class={`
-          focus:bg-white
-          focus:text-black
-                    text__glowing
-                    ${styles.button} 
-                    w-fit
-                    no-underline
-                    px-5
-                    py-3
-                    border
-                    border-solid
-                    border-white
-                    rounded-full
-                    uppercase
-                    animate-blurred-fade-in
-                    `}
-        >
-          Plan de adiestramiento personalizado
-        </button>
       </div>
-    </section>
-  </main></Layout
->
+
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          type="text"
+          name="floating_age"
+          id="floating_age"
+          class="block py-2.5 px-0 w-full text-xl bg-transparent border-0 border-b-2 appearance-none text-white border-white-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="floating_age"
+          class="peer-focus:font-medium absolute text-lg text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Edad de tu mascota en meses</label
+        >
+      </div>
+
+      <label for="breed_select" class="sr-only">Raza select</label>
+      <select
+        id="breed_select"
+        name="breed_select"
+        class="block py-2.5 px-0 w-full text-lg text-gray-400 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer my-5"
+      >
+        <option selected>Elije la raza</option>
+        <option value="Chihuahua">Chihuahua</option>
+        <option value="Xoloitzcuintle">Xoloitzcuintle</option>
+        <option value="Labrador retriever">Labrador Retriever</option>
+        <option value="Pastor aleman">Pastor Alemán</option>
+        <option value="Schnauzer">Schnauzer</option>
+        <option value="Bulldog">Bulldog</option>
+        <option value="Pug">Pug</option>
+        <option value="Boxer">Boxer</option>
+        <option value="Beagle">Beagle</option>
+        <option value="Cocker spaniel">Cocker Spaniel</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- Input type text hidden when the option "Other" no active -->
+      <div
+        id="other_breed"
+        class="hidden relative z-0 w-full mb-5 group animate-slide-in-top"
+      >
+        <input
+          type="text"
+          name="floating_breed"
+          id="floating_breed"
+          class="block py-2.5 px-0 w-full text-xl bg-transparent border-0 border-b-2 appearance-none text-white border-white-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+        />
+        <label
+          for="floating_breed"
+          class="peer-focus:font-medium absolute text-lg text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Especifica la raza</label
+        >
+      </div>
+
+      <label for="plan_select" class="sr-only">Plan select</label>
+      <select
+        id="plan_select"
+        name="plan_select"
+        class="block py-2.5 px-0 w-full text-lg text-gray-400 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer my-5"
+      >
+        <option selected>Elije el plan de tu preferencia</option>
+
+        <!-- Render plans -->
+        {plans.map((plan) => <option value={plan.id}>{plan.name}</option>)}
+      </select>
+
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >Submit</button
+      >
+    </form>
+  </main>
+</Layout>
+
+<script>
+  // TypeScript para manejar la visibilidad del input en base a la selección del usuario
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const breedSelect: HTMLSelectElement = document.getElementById(
+      'breed_select'
+    ) as HTMLSelectElement
+    const otherBreedInput: HTMLInputElement = document.getElementById(
+      'other_breed'
+    ) as HTMLInputElement
+
+    breedSelect.addEventListener('change', function () {
+      if (this.value === 'Other') {
+        otherBreedInput.classList.remove('hidden')
+      } else {
+        otherBreedInput.classList.add('hidden')
+      }
+    })
+  })
+</script>
