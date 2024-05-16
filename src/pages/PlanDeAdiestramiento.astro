@@ -6,7 +6,6 @@ const plans = await db.select().from(Plan)
 import { generateUserId } from '@/lib/users'
 
 import { getSession } from 'auth-astro/server'
-const session = await getSession(Astro.request)
 
 if (Astro.request.method === 'POST') {
   // Get the data from the form
@@ -168,7 +167,7 @@ if (Astro.request.method === 'POST') {
 
 <script>
   // TypeScript para manejar la visibilidad del input en base a la selección del usuario
-  window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', () => {
     const breedSelect: HTMLSelectElement = document.getElementById(
       'breed_select'
     ) as HTMLSelectElement
