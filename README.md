@@ -3,7 +3,7 @@
 
 <div align="center">
 
-<a href="https://github.com/midudev/la-velada-web-oficial">
+<a href="https://github.com/V1CMA-V/minis-fha">
   <img width="300px" src="public/schnauzerBento.webp" alt="Logo" width="800" />
 </a>
 
@@ -94,7 +94,7 @@ Minis Fha es un adiestrador de perros de muchos años de experiencia el cual ofr
 1. Clona el repositorio
 
    ```sh
-   git clone https://github.com/midudev/la-velada-web-oficial.git
+   git clone https://github.com/V1CMA-V/minis-fha
    ```
 
 2. Instala los paquetes de NPM
