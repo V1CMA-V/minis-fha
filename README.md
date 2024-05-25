@@ -94,7 +94,7 @@ Minis Fha es un adiestrador de perros de muchos años de experiencia el cual ofr
 1. Clona el repositorio
 
    ```sh
-   git clone https://github.com/V1CMA-V/minis-fha
+   git clone https://github.com/V1CMA-V/minis-fha.git
    ```
 
 2. Instala los paquetes de NPM
