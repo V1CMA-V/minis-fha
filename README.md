@@ -3,7 +3,7 @@
 
 <div align="center">
 
-<a href="https://github.com/V1CMA-V/minis-fha">
+<a href="https://minis-fha.vercel.app/">
   <img width="300px" src="public/schnauzerBento.webp" alt="Logo" width="800" />
 </a>
 
